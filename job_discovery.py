@@ -181,13 +181,13 @@ CAMH_API_TEMPLATE = (
 )
 
 
-# 复用同一套 Oracle Recruiting Cloud API 结构的机构,加在这里就行,不用写新函数
+# Add institutions using the same Oracle Recruiting Cloud API structure here; no new function needed
 ORACLE_SITES = {
     "CAMH": {
         "base_url": "https://iaemup.fa.ocs.oraclecloud.com",
         "site_number": "CX_1",
     },
-    # "Siriraj": {...},  # 如果它也是 Oracle 系统的话
+    # "Siriraj": {...},  
 }
 
 import re
