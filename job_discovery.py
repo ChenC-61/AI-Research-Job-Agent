@@ -115,10 +115,9 @@ def is_same_domain(url: str, base_url: str) -> bool:
 
 
 def wait_for_stable_anchors(page: Page, base_url: str, max_wait_ms: int = 20_000, poll_ms: int = 1_000) -> None:
-    """等到页面里的链接数量连续两次不变，再认为加载完成。
-    比 networkidle 更可靠，因为很多招聘系统有埋点/心跳导致 networkidle 永远等不到。
+    """Wait until the link count is unchanged twice; more reliable than `networkidle` on dynamic job sites.
     """
-    page.wait_for_timeout(1_000)  # 给首次渲染一点时间
+    page.wait_for_timeout(1_000)  # Allow time for the initial render
     elapsed = 0
     last_count = -1
     stable_hits = 0
@@ -126,16 +125,16 @@ def wait_for_stable_anchors(page: Page, base_url: str, max_wait_ms: int = 20_000
         count = len(page_anchors(page, base_url))
         if count == last_count and count > 0:
             stable_hits += 1
-            if stable_hits >= 2:  # 连续两次相同才算稳定
+            if stable_hits >= 2:  # Consider stable only after two identical checks
                 return
         else:
             stable_hits = 0
         last_count = count
         page.wait_for_timeout(poll_ms)
         elapsed += poll_ms
-    # 超时也不报错，让后面照常抓取，只是可能不完整
+    # Ignore timeout and continue scraping, though results may be incomplete
 
-def dump_debug(page: Page, site: str) -> None:      # ← 加这个函数
+def dump_debug(page: Page, site: str) -> None:      
     DEBUG_DIR.mkdir(exist_ok=True)
     safe = re.sub(r"[^\w]+", "_", site)
     page.screenshot(path=str(DEBUG_DIR / f"{safe}.png"), full_page=True)
