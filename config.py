@@ -104,7 +104,7 @@ EXCLUDE_KEYWORDS = [
 ]
 
 
-# title 用原来那套完整关键词表就够(标题本身足够说明岗位性质)
+# title exclude keywords
 TITLE_EXCLUDE_KEYWORDS = EXCLUDE_KEYWORDS
 
 # 完整JD正文只用更长、更具体的短语,避免命中"Reporting to the Manager"这类模板句
