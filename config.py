@@ -67,7 +67,7 @@ INTEREST_KEYWORDS = [
 # Keywords to exclude
 # ==============================
 
-# These jobs are usually irrelevant for your career goal.
+# These jobs are usually irrelevant for the career goal.
 
 EXCLUDE_KEYWORDS = [
 
