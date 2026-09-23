@@ -107,7 +107,7 @@ EXCLUDE_KEYWORDS = [
 # title exclude keywords
 TITLE_EXCLUDE_KEYWORDS = EXCLUDE_KEYWORDS
 
-# 完整JD正文只用更长、更具体的短语,避免命中"Reporting to the Manager"这类模板句
+# Use longer, more specific phrases from the full job description text, and avoid matching generic boilerplate such as “Reporting to the Manager.”
 CONTEXT_EXCLUDE_PHRASES = [
     "registered nurse",
     "pharmacy technician",
@@ -116,7 +116,7 @@ CONTEXT_EXCLUDE_PHRASES = [
     "front desk",
     "patient service representative",
 
-     # 本次新增
+     # Newly added
     "legal assistant",
     "legal counsel",
     "legal counsel",
@@ -131,13 +131,12 @@ CONTEXT_EXCLUDE_PHRASES = [
 
 
 # ==============================
-# Scope keywords —— 你的硬约束,决定"值不值得考虑"
-# 单独命中就该有相当分量,因为这是 non-negotiable criteria
+# Scope keywords 
 # ==============================
 SCOPE_WEIGHTS = {
     "psychiatry": 5,
     "psychiatric": 5,
-    "mental health": 4,        # 权重比psychiatry低一点,因为它更容易在机构介绍里泛化出现
+    "mental health": 4,        
     "precision psychiatry": 6,
     "schizophrenia": 5,
     "bipolar": 5,
@@ -147,8 +146,7 @@ SCOPE_WEIGHTS = {
 }
 
 # ==============================
-# Method keywords —— 你的技能匹配,证明"这活儿你能干、你想干"
-# 单独出现分量不够,要配合scope才有意义
+# Method keywords 
 # ==============================
 METHOD_WEIGHTS = {
     "machine learning": 3,
@@ -165,8 +163,7 @@ METHOD_WEIGHTS = {
 }
 
 # ==============================
-# Title keywords —— 最弱的信号
-# researcher/postdoc/scientist 任何学科都能叫,单独出现几乎没有筛选力
+# Title keywords 
 # ==============================
 TITLE_WEIGHTS = {
     "research scientist": 1,
@@ -191,12 +188,8 @@ HEADLESS = True
 TIMEOUT_MS = 45_000
 
 
-# ==============================================================
-# 追加到你现有 config.py 末尾
-# ==============================================================
-
 # ------------------------------------------------------------
-# LLM 语义复核（Ollama 本地模型）
+# LLM-based semantic review using a local Ollama model
 # ------------------------------------------------------------
 
 LLM_SCREENING = {
@@ -245,8 +238,8 @@ LLM_SCREENING = {
 
 }
 
-# 你的研究画像，会被拼进 LLM prompt 里。
-# 改这里就能调整筛选口径，不用碰 llm_screener.py 的代码。
+# Research profile incorporated into the LLM prompt.
+# Modify this configuration to adjust the screening criteria without changing llm_screener.py.
 RESEARCHER_PROFILE = """
 You are evaluating research-oriented job postings for the following researcher.
 
