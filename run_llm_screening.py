@@ -48,8 +48,8 @@ from config import (
 # Boilerplate stripping
 # ------------------------------------------------------------
 # Everything from the first matching marker onward is dropped. These
-# markers are deliberately generic (not CAMH-specific) so this holds up
-# as more institutions get added. Add new markers here as you spot more
+# markers are deliberately generic  so this holds up as more
+# institutions get added. Add new markers here as you spot more
 # boilerplate patterns from other sites.
 BOILERPLATE_MARKERS = [
     # compensation / benefits
