@@ -20,10 +20,7 @@ Design notes (this version):
    at all (cost control), not to influence the verdict itself.
 
 3. Verdict is a 4-option enum (skip/maybe/apply/strong_apply), not a
-   numeric score. A prior version used a 0-10 fit_score, and the model
-   did not reliably derive that number from its own stated reasoning
-   (e.g. reason="does not align with computational psychiatry" +
-   fit_score=10). Keeping the closed-enum design deliberately -- do not
+   numeric score. Keeping the closed-enum design deliberately -- do not
    reintroduce a free-form numeric score.
 
 Requires: requests, pandas, openpyxl.
