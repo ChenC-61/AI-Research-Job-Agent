@@ -7,13 +7,10 @@ the final report.
 
 Design notes (this version):
 
-1. Boilerplate stripping (NEW): full JDs now include institution
-   self-description, compensation/benefits blocks, DEI statements, and
-   (for bilingual sites like CAMH) a duplicate French version of the same
-   text. None of that helps the LLM judge fit -- it only adds tokens,
-   which is exactly what was causing ~1 min/job and memory pressure on a
-   16GB Mac even when only screening short summaries. strip_boilerplate()
-   removes it BEFORE the text is sent to Ollama.
+1. Boilerplate stripping (NEW): full JDs may include institution self-description,
+   compensation/benefits blocks, DEI statements, and duplicate bilingual content.
+   These sections do not help the LLM judge fit and only add unnecessary tokens.
+   strip_boilerplate() removes them before the text is sent to Ollama.
 
 2. This does NOT depend on the scraper's keyword Score for its judgment.
    The keyword score (from job_monitor.py) is a cheap, coarse first-pass
