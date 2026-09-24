@@ -119,7 +119,6 @@ CONTEXT_EXCLUDE_PHRASES = [
      # Newly added
     "legal assistant",
     "legal counsel",
-    "legal counsel",
     "department secretary",
     "community partnerships coordinator",
     "organizational development",
