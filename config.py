@@ -124,8 +124,6 @@ CONTEXT_EXCLUDE_PHRASES = [
     "organizational development",
     "engagement coordinator",
     "co-facilitator",
-    "community partnerships coordinator",
-    "engagement coordinator",
 ]
 
 
