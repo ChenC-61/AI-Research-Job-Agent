@@ -195,7 +195,7 @@ LLM_SCREENING = {
     "enabled": True,
 
     # Ollama model
-    "model": "gemma4:e4b",
+    "model": "gemma4:12b",
 
     # Ollama API
     "ollama_url": "http://localhost:11434/api/chat",
