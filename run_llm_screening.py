@@ -49,7 +49,7 @@ from config import (
 # ------------------------------------------------------------
 # Everything from the first matching marker onward is dropped. These
 # markers are deliberately generic  so this holds up as more
-# institutions get added. Add new markers here as you spot more
+# institutions get added. Add new markers here as spot more
 # boilerplate patterns from other sites.
 BOILERPLATE_MARKERS = [
     # compensation / benefits
@@ -204,7 +204,7 @@ def _cache_entry_valid(entry: dict, cfg: dict) -> bool:
 # methodologies, or position titles -- those all live in RESEARCHER_PROFILE
 # (config.py), which is the single source of truth and gets interpolated
 # into the user prompt at call time. This avoids the rubric silently going
-# stale if you edit the profile but forget to also edit this file.
+# stale if edit the profile but forget to also edit this file.
 SYSTEM_PROMPT = """You are screening job postings for a researcher. \
 You will be given the researcher's profile and a single job posting \
 (boilerplate such as institutional branding, benefits, and DEI statements \
