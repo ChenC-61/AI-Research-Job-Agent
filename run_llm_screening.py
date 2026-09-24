@@ -14,11 +14,10 @@ Design notes (this version):
 
 2. This does NOT depend on the scraper's keyword Score for its judgment.
    The keyword score (from job_monitor.py) is a cheap, coarse first-pass
-   filter for VOLUME (how many postings even reach this stage); the LLM's
-   verdict is an independent judgment based on actual JD content. The
-   optional keyword_prefilter_threshold in config still exists purely to
-   control how many jobs get LLM-screened at all (cost control), not to
-   influence the verdict itself.
+   filter for VOLUME; the LLM's verdict is an independent judgment based 
+   on actual JD content. The optional keyword_prefilter_threshold in 
+   config still exists purely to control how many jobs get LLM-screened 
+   at all (cost control), not to influence the verdict itself.
 
 3. Verdict is a 4-option enum (skip/maybe/apply/strong_apply), not a
    numeric score. A prior version used a 0-10 fit_score, and the model
